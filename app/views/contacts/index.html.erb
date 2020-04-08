@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.name %> Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+
+      <th colspan="8">Number</th>
+      <th colspan="8">Country Code</th>
+      <th colspan="8">State</th>
+      <th colspan="8">Device Type</th>
+      <th colspan="8">Location Type</th>
+      <th colspan="8"></th>
+      <th colspan="8"></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td colspan="8"><%= contact.number %></td>
+        <td colspan="8"><%= contact.country_code %></td>
+        <td colspan="8"><%= contact.state_code %></td>
+        <td colspan="8"><%= contact.device_type %></td>
+        <td colspan="8"><%= contact.location_type %></td>
+        <td><%= link_to 'Show', [@user, contact] %></td>
+        <td><%= link_to 'Edit', edit_user_contact_path(@user,contact) %></td>
+        <td><%= link_to 'Destroy', [@user, contact], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_user_contact_path(@user) %>
+<%= link_to 'Back', users_path %>

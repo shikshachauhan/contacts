@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @contact.number %>
+</p>
+
+<p>
+  <strong>Country Code:</strong>
+  <%= @contact.country_code %>
+</p>
+
+<p>
+  <strong>State Code:</strong>
+  <%= @contact.state_code %>
+</p>
+
+<p>
+  <strong>Device Type:</strong>
+  <%= @contact.device_type %>
+</p>
+
+<p>
+  <strong>Location Type:</strong>
+  <%= @contact.location_type %>
+</p>
+<%= link_to 'Edit', new_user_contact_path(@user, @contact) %> |
+<%= link_to 'Back', user_contacts_path(@user) %>
